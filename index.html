@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>周慧琪小窝</title>
+    <style>
+      html, body { height: 100%; margin: 0; }
+      :root { --bg-width: 45%; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        background-image: url('./img/8.jpg');
+        background-size: var(--bg-width) auto;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* 桌面端背景固定 */
+        color: #fff;
+      }
+      body::before { content: ""; position: fixed; inset: 0; background: rgba(207, 56, 56, 0.08); pointer-events: none; }
+      .content {
+        max-width: 900px; margin: 40px auto; background: rgba(255,255,255,0.05);
+        color: #ffffff; padding: 22px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+        border: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      h1, h2 { margin-top: 0 }
+      p { line-height: 1.6 }
+      img.responsive-photo { display:block; max-width:320px; width:100%; height:auto; border-radius:8px; margin:12px 0; box-shadow:0 6px 18px rgba(0,0,0,0.18); border:1px solid rgba(255,255,255,0.04); }
+      @media (max-width:768px) {
+        :root { --bg-width:80%; }
+        .content{margin:20px;padding:16px}
+        img.responsive-photo{max-width:220px}
+        body { background-attachment: scroll; } /* 移动端保留滚动以改善性能 */
+      }
+    </style>
+</head>
+<body>
+<div class="content">
+
+  <!-- 背景音乐播放按钮 -->
+  <button onclick="playBgm()">播放背景音乐</button>
+  <button onclick="pauseBgm()">暂停背景音乐</button>
+
+  <!-- 隐藏的音频标签（实际播放的载体） -->
+  <audio id="bgm" src="audio/bgm.mp3" loop>
+    您的浏览器不支持音频播放，请升级浏览器
+  </audio>
+
+  <script>
+    // 获取音频元素
+    const bgm = document.getElementById('bgm');
+    
+    // 播放函数
+    function playBgm() {
+      bgm.play();
+      alert("背景音乐开始播放啦~");
+    }
+    
+    // 暂停函数
+    function pauseBgm() {
+      bgm.pause();
+    }
+  </script>
+    <h1>欢迎你参观周慧琪的专属网站</h1>
+    <h2>你是唯一的阅读者</h2>
+    <p>时间过的真快,我们在一起已经100天了</p>
+    <p>我们第一次见面</p>
+    <img class="responsive-photo" src="./img/2.jpg" alt="照片 2" loading="lazy">
+    <p>那是你第一次为一个人去到一个让陌生的城市</p>
+    <p>我们一起去了大雁塔，去转了钟楼，去了很多很多地方</p>
+    <img class="responsive-photo" src="./img/3.jpg" alt="照片 3" loading="lazy">
+    <p>还带你见了最好的朋友</p>
+    <img class="responsive-photo" src="./img/6.jpg" alt="照片 6" loading="lazy">
+    <p>你说过有我陪就很幸福，我想说是我们彼此的陪伴让彼此更幸福</p>
+    <p>后来我们去了汉中</p>
+    <img class="responsive-photo" src="./img/7.jpg" alt="照片 7" loading="lazy">
+    <p>我喜欢你搞怪的样子</p>
+    <img class="responsive-photo" src="./img/4.jpg" alt="照片 4" loading="lazy">
+    <p>当然正经的样子我更喜欢</p>
+    <img class="responsive-photo" src="./img/5.jpg" alt="照片 5" loading="lazy">
+    <p>祝我们100天快乐！希望未来的每一天都有你的陪伴！我们能克服距离永远在一起</p>
+  </div>
+</body>
+</html>
